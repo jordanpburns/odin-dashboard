@@ -1,9 +1,34 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/regular/Lato-Regular.woff2') format('woff2'),
+        url('fonts/regular/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/semibold/Lato-Semibold.woff2') format('woff2'),
+        url('fonts/semibold/Lato-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/bold/Lato-Bold.woff2') format('woff2'),
+        url('fonts/bold/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     height: 100%
 }
 body {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 6.5fr 1fr;
     /* tried to get a gray for the background with ever so slight a green tint */
     --color-gray: #e4ecea;
 
@@ -20,11 +45,11 @@ body {
     --color-900: #064e3b;
     --color-950: #022c22;
 
-    --content-shadow: 0 4px 8px 0 rgba(114, 118, 117, 0.2), 0 6px 18px 0 rgba(114, 118, 117, .19);
-    --bottom-margin: 12px;
+    --content-shadow: 0 3px 6px 0 rgba(114, 118, 117, 0.2), 0 5px 15px 0 rgba(114, 118, 117, .19);
+    --bottom-margin: 10px;
     
     height: 100%;
-    font-family: sans-serif;
+    font-family: Lato ,sans-serif;
 }
 
 .edge {
@@ -40,7 +65,7 @@ body {
 }
 
 .app-container {
-    grid-template: 1fr 5fr / 1fr 5fr;
+    grid-template: 1fr 5fr / 1.4fr 5fr;
     grid-column: 2 / 3;
     height: 100%;
 }
@@ -67,51 +92,50 @@ body {
 }
 
 #search {
-    gap: 16px;
+    gap: 13px;
     align-items: center;
-    margin-left: 32px;
+    margin-left: 26px;
 }
 
 #search img {
-    height: 20px;
-    width: 20px;
-}
-
-#user-info {
-    gap: 16px;
-    align-items: center;
-    justify-content: right;
-    margin-right: 32px;
-}
-
-#searchbar {
-    height: 32px;
-    width: 500px;
-    padding: 1px 15px;
-    border-radius: 15px;
-    background-color: var(--color-gray);
-    border: none;
+    height: 17px;
+    width: 17px;
 }
 
 #user-info {
     grid-area: 1 / 2 / 2 / 3;
+    font-size: 14px;
+    font-weight: bold;
+    gap: 16px;
+    align-items: center;
+    justify-content: right;
+    margin-right: 26px;
+}
+
+#searchbar {
+    height: 24px;
+    width: 450px;
+    padding: 1px 12px;
+    border-radius: 12px;
+    background-color: var(--color-gray);
+    border: none;
 }
 
 #user-info .profile-pic-me {
     object-fit: cover;
     object-position: 100% 100%;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 #greeting-container {
     grid-area: 2 / 1 / 3 / 2;
-    gap: 16px;
+    gap: 13px;
     grid-template: 1fr / 1fr 6fr;
     align-items: center;
-    margin-left: 24px;
-    margin-bottom: 8px;
+    margin-left: 19px;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
@@ -124,8 +148,8 @@ body {
     object-fit: cover;
     object-position: 100% 100%;
     border-radius: 50%;
-    height: 60px;
-    width: 60px;
+    height: 48px;
+    width: 48px;
     justify-self: right;
 }
 
@@ -134,8 +158,8 @@ body {
     justify-self: left;
 }
 #hi-there {
-    font-size: 14px;
-    margin-bottom: 6px;
+    font-size: 12px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
@@ -143,39 +167,41 @@ body {
     grid-area: 2 / 2 / 3 / 3;
     justify-content: right;
     align-items: center;
-    gap: 16px;
-    margin-right: 32px;
-    margin-bottom: 8px;
-    font-size: 16px;
+    gap: 13px;
+    margin-right: 26px;
+    margin-bottom: 6px;
+    font-size: 13px;
 }
 
 .nav-item {
-    border-radius: 20px;
-    padding: 10px 20px;
+    border-radius: 16px;
+    padding: 8px 22px;
     background-color: var(--color-800);
     color: white;
 }
 
 #bell {
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
 }
 
 /* SIDEBAR */
 
 #sidebar {
     grid-area: 1 / 1 / 3 / 2;
-    grid-template-rows: 100px 300px 150px;
     background-color: var(--color-600);
     color: white;
+    font-weight: bold;
+    flex-direction: column;
+    gap: 8px;
 }
 
 #sidebar-title {
-    grid-row: 1 / 2;
+
 }
 
 #sidebar-top-items {
-    grid-row: 2 / 3;
+
 }
 #sidebar-top-items img {
     height: 20px;
@@ -183,7 +209,7 @@ body {
 }
 
 #sidebar-bottom-items {
-    grid-row: 3 / 4;
+
 }
 
 #sidebar-bottom-items img {
@@ -192,24 +218,24 @@ body {
 }
 
 #sidebar .flex-container {
-    gap: 20px;
-    margin: 20px;
+    gap: 16px;
+    margin: 16px;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #sidebar-title .sidebar-item {
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 #sidebar-title img {
-    height: 30px;
-    width: 30px;
+    height: 36px;
+    width: 36px;
 }
 
 #sidebar-title.sidebar-item-container.flex-container {
-    gap: 10px;
-    font-weight: normal;
+    gap: 8px;
 }
 
 #sidebar img {
@@ -221,34 +247,36 @@ body {
 
 #content {
     grid-area: 2 / 2 / 3 / 3;
-    grid-template: 50px 1fr / 3fr 1fr;
-    gap: 16px;
+    grid-template: 40px 1fr / 3fr 1.2fr;
+    gap: 13px;
     background-color: var(--color-gray);
 }
 
 .content-title {
-    padding-top: 32px;
+    padding-top: 26px;
 }
 
 #projects-title {
     grid-area: 1 / 1 / 2 / 2;
-    padding-left: 16px;
+    padding-left: 13px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #projects {
     grid-area: 2 / 1 / -1 / 2;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-left: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-left: 13px;
 }
 
 .card {
     grid-template-rows: 4fr 1fr;
     background-color: white;
-    border-radius: 15px;
-    border-left: 6px solid goldenrod;
-    padding: 28px 22px;
-    padding-bottom: 16px;
+    border-radius: 12px;
+    border-left: 5px solid goldenrod;
+    padding: 23px 18px;
+    padding-bottom: 13px;
     box-shadow: var(--content-shadow);
     margin-bottom:var(--bottom-margin);
 }
@@ -258,20 +286,20 @@ body {
 }
 
 .medium-gray {
-    font-size:14px;
+    font-size:12px;
     color: gray;
 }
 
 .title {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
-    margin-bottom: 5px
+    margin-bottom: 4px
 }
 
 .card .flex-container {
     justify-content: right;
-    gap: 24px;
-    margin-top: 12px;
+    gap: 20px;
+    margin-top: 10px;
     align-items: center;
     grid-row: 2 / 3;
 }
@@ -283,32 +311,34 @@ body {
 
 #announcements-trends-grid {
     grid-area: 1 / 2 / -1 / -1;
-    grid-template-rows: 50px 1fr 50px 1fr;
-    gap: 16px;
+    grid-template-rows: 40px 1fr 40px 1fr;
+    gap: 13px;
 }
 
 #announcements-title {
     grid-row: 1 / 2;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #announcements {
     grid-row: 2 / 3;
     background-color: white;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: var(--content-shadow);
-    margin-right: 28px;
-    padding: 24px;
+    margin-right: 23px;
+    padding: 20px;
 }
 
 .announcement-title {
-    font-size: 14px;
+    font-size: 12.5px;
     font-weight: bold;
-    line-height: 15px;
+    line-height: 12px;
     margin-bottom: 4px;
 }
 
 .small-gray {
-    font-size:12px;
+    font-size:10px;
     color: gray;
 }
 
@@ -318,7 +348,7 @@ p {
 }
 
 .announcement {
-    padding: 8px;
+    padding: 10px;
 }
 
 .announcement + .announcement {
@@ -327,34 +357,36 @@ p {
 
 #trending-title {
     grid-row: 3 / 4;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #trending {
     grid-row: 4 / 5;
     background-color: white;
-    border-radius: 12px;
+    border-radius: 9.5px;
     box-shadow: var(--content-shadow);
-    margin-right: 28px;
-    padding: 24px;
+    margin-right: 23px;
+    padding: 20px;
     margin-bottom: var(--bottom-margin);
     justify-content: left;
 }
 
 .trend-container {
     display: flex;
-    gap: 12px;
+    gap: 9.5px;
     align-items: center;
 }
 
 .profile-container {
     grid-column: 2 / 3;
-    font-size: 12px;
+    font-size: 11px;
     color: gray;
 }
 
 img.profile-pic {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 .user-name {
@@ -363,8 +395,18 @@ img.profile-pic {
 
 #attribution {
     grid-column: 1 / -1;
+    font-size: 14px;
     text-align: center;
     padding: 4px;
     background-color: white;
 }
 
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
